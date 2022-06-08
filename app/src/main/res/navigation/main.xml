@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/hot100Fragment">
+
+    <fragment
+        android:id="@+id/hot100Fragment"
+        android:name="com.example.mybillboard.view.Hot100Fragment"
+        android:label="fragment_hot100"
+        tools:layout="@layout/fragment_hot100" >
+        <action
+            android:id="@+id/action_hot100Fragment_to_songDetailFragment"
+            app:destination="@id/songDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/songDetailFragment"
+        android:name="com.example.mybillboard.view.SongDetailFragment"
+        android:label="fragment_song_detail"
+        tools:layout="@layout/fragment_song_detail" >
+        <argument
+            android:name="songId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.mybillboard.view.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_songDetailFragment"
+            app:destination="@id/songDetailFragment" />
+    </fragment>
+</navigation>
